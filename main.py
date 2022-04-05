@@ -31,7 +31,7 @@ def crawlastroica(st_date: date, end_date:date):
         for row in rows:
             table.append([])
             for col in row(["td", "th"]):
-                print(col)
+                # print(col)
                 table[-1].append(col.text)
         return table
 
@@ -47,3 +47,4 @@ if __name__ == '__main__':
     start_date = date(2022, 11, 1)
     end_date = date(2022, 12, 1)
     csv_writer(str(start_date) + '-' + str(end_date), crawlastroica(start_date, end_date))
+    print("CSV file " + str(start_date) + '-' + str(end_date) + " created.")
